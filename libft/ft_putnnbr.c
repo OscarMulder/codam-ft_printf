@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   new_fmt.c                                          :+:    :+:            */
+/*   ft_putnnbr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 12:05:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/07 16:31:32 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/07 14:16:01 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/07 14:23:38 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-t_fmt	*new_fmt(void)
+void	ft_putnnbr(int n, int len)
 {
-	int i;
-	t_fmt *fmt;
-
-	fmt = (t_fmt*)malloc(sizeof(fmt));
-	i = 0;
-	while (i < 6)
+	if (len > 0 && n < 0)
 	{
-		fmt->opt[i] = 0;
-		i++;
+		ft_putchar('-');
+		if (n < -9)
+			ft_putnnbr((n / 10) * -1, len - 2);
+		ft_putchar(-(n % 10) + '0');
 	}
-	fmt->width = -1;
-	fmt->prec = -1;
-	fmt->length = -1;
-	fmt->conv = '\0';
-	return (fmt);
+	else if (len > 0)
+	{
+		if (n > 9)
+			ft_putnnbr(n / 10, len - 1);
+		ft_putchar((n % 10) + '0');
+	}
 }

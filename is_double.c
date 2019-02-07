@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   new_fmt.c                                          :+:    :+:            */
+/*   is_double.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 12:05:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/07 16:31:32 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/07 13:50:43 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/07 13:50:54 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_fmt	*new_fmt(void)
+int 	is_double(char c)
 {
-	int i;
-	t_fmt *fmt;
-
-	fmt = (t_fmt*)malloc(sizeof(fmt));
-	i = 0;
-	while (i < 6)
-	{
-		fmt->opt[i] = 0;
-		i++;
-	}
-	fmt->width = -1;
-	fmt->prec = -1;
-	fmt->length = -1;
-	fmt->conv = '\0';
-	return (fmt);
+	if (c == 'e' || c == 'E')
+		return (1);
+	if (c == 'f' || c == 'F')
+		return (1);
+	if (c == 'g' || c == 'G')
+		return (1);
+	if (c == 'a' || c == 'A')
+		return (1);
+	return (0);
 }

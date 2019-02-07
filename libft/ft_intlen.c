@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/14 19:21:44 by omulder        #+#    #+#                */
-/*   Updated: 2019/01/19 19:07:29 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/07 17:22:06 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int		ft_intlen(int n)
 	int len;
 
 	len = 1;
-	if (n > 0)
+	if (n != 0)
 		len--;
 	while (n != 0)
 	{

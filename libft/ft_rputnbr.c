@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/09 12:12:44 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/06 20:10:35 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/07 14:34:11 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int		ft_rputnbr(int n)
 
 	if (n < 0)
 	{
-		ft_putchar('-');
 		if (n < -9)
 			len = (2 + ft_rputnbr((n / 10) * -1));
 		else

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/07 12:14:54 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/07 16:31:17 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_fmt 
 {
-	char	opt[7];
+	int		opt[6];
 	int 	width;
 	int		prec;
 	int		length;
@@ -40,5 +40,14 @@ t_fmt	*new_fmt(void);
 int		is_length(char c);
 int		is_conversion(char c);
 int		is_flag(char c);
+int		is_int(char c);
+int 	is_double(char c);
+int		is_char(char c);
+int		is_charp(char c);
+int		is_voidp(char c);
+int		is_longint(char c);
+int		is_wcharp(char c, int l);
+int		print_var(t_fmt *fmt, va_list ap);
+void	ft_putnnbr(int n, int len);
 
 #endif

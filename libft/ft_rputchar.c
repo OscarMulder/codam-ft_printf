@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   check_format.c                                     :+:    :+:            */
+/*   ft_rputchar.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 12:01:23 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/08 13:51:50 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/08 13:18:32 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/08 13:21:26 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_fmt	*check_format(const char **format)
+int		ft_rputchar(int c)
 {
-	t_fmt	*fmt;
+	char uc;
 
-	fmt = new_fmt();
-	find_options(format, fmt);
-	find_width(format, fmt);
-	find_precision(format, fmt);
-	find_length(format, fmt);
-	find_conversion(format, fmt);
-	if (!fmt->conv)
-	{
-		free(fmt);
-		return (NULL);
-	}
-	return (fmt);
+	uc = (unsigned char)c;
+	write(1, &uc, 1);
+	return (1);
 }

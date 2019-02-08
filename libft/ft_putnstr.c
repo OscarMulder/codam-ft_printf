@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   check_format.c                                     :+:    :+:            */
+/*   ft_putnstr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 12:01:23 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/08 13:51:50 by omulder       ########   odam.nl         */
+/*   Created: 2019/01/10 14:46:11 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/02 12:20:13 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-t_fmt	*check_format(const char **format)
+void	ft_putnstr(char const *s, size_t len)
 {
-	t_fmt	*fmt;
+	size_t i;
 
-	fmt = new_fmt();
-	find_options(format, fmt);
-	find_width(format, fmt);
-	find_precision(format, fmt);
-	find_length(format, fmt);
-	find_conversion(format, fmt);
-	if (!fmt->conv)
+	i = 0;
+	while (i < len)
 	{
-		free(fmt);
-		return (NULL);
+		write(1, &s[i], 1);
+		i++;
 	}
-	return (fmt);
 }

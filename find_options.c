@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 12:05:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/07 17:23:54 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/08 14:14:59 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	find_options(const char **format, t_fmt *fmt)
 {
-	while (is_flag(**format))
+	while ((!is_conversion(**format) && !ft_isdigit(**format) && **format != '.'
+	&& !is_length(**format)) || is_flag(**format))
 	{
 		if (**format == '#')
 			fmt->opt[0] = 1;

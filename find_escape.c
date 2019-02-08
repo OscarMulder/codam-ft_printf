@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   check_format.c                                     :+:    :+:            */
+/*   find_escape.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 12:01:23 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/08 13:51:50 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/08 13:23:49 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/08 13:24:03 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_fmt	*check_format(const char **format)
+void	find_escape(const char **format, t_fmt *fmt)
 {
-	t_fmt	*fmt;
-
-	fmt = new_fmt();
-	find_options(format, fmt);
-	find_width(format, fmt);
-	find_precision(format, fmt);
-	find_length(format, fmt);
-	find_conversion(format, fmt);
-	if (!fmt->conv)
-	{
-		free(fmt);
-		return (NULL);
-	}
-	return (fmt);
+	if (**format == '%')
+		fmt->conv = '%';
 }

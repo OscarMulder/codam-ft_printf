@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   check_format.c                                     :+:    :+:            */
+/*   print_padding.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 12:01:23 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/08 13:51:50 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/08 15:50:37 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/08 15:50:45 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_fmt	*check_format(const char **format)
+int		print_padding(char c, int size)
 {
-	t_fmt	*fmt;
+	int i;
 
-	fmt = new_fmt();
-	find_options(format, fmt);
-	find_width(format, fmt);
-	find_precision(format, fmt);
-	find_length(format, fmt);
-	find_conversion(format, fmt);
-	if (!fmt->conv)
+	i = 0;
+	while (i < size)
 	{
-		free(fmt);
-		return (NULL);
+		ft_putchar(c);
+		i++;
 	}
-	return (fmt);
+	return (size);
 }

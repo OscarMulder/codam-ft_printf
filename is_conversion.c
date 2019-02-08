@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 12:06:41 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/07 12:06:47 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/08 13:52:09 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int		is_conversion(char c)
 	if (c == 'S' || c == 's')
 		return (1);
 	if (c == 'p' || c == 'n')
+		return (1);
+	if (c == '%')
 		return (1);
 	return (0);
 }

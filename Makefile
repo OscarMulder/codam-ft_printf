@@ -6,7 +6,7 @@
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/05 07:59:03 by omulder        #+#    #+#                 #
-#    Updated: 2019/02/07 14:25:36 by omulder       ########   odam.nl          #
+#    Updated: 2019/02/08 16:20:11 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,17 +17,19 @@ FLAGS = -Wall -Werror -Wextra
 INCLUDES = -I./ -I./libft/
 VPATH = ./libft/
 LIBFT = ft_putchar.c ft_rputstr.c ft_rputnbr.c ft_putnbr.c ft_atoi.c \
-ft_intlen.c ft_isdigit.c ft_itoa.c ft_isspace.c ft_putnnbr.c
+ft_intlen.c ft_isdigit.c ft_itoa.c ft_isspace.c ft_putnnbr.c ft_rputchar.c \
+ft_strlen.c ft_putstr.c ft_putnstr.c
 SRCS = ft_printf.c debug_printfmt.c check_format.c find_conversion.c \
 find_length.c find_options.c find_precision.c find_width.c is_conversion.c \
 is_length.c is_flag.c new_fmt.c is_char.c is_charp.c is_double.c is_int.c \
-is_longint.c is_voidp.c is_wcharp.c print_var.c
+is_longint.c is_voidp.c is_wcharp.c print_var.c find_escape.c print_int.c \
+print_char.c print_padding.c print_charp.c
 OBJECTS = $(SRCS:.c=.o) $(LIBFT:.c=.o)
 
 all: $(OBJECTS) $(NAME) clean $(TEST)
 
 $(TEST): $(NAME)
-	$(CC) -o $(TEST) $(FLAGS) $(INCLUDES) -L./ -lftprintf main.c
+	$(CC) -o $(TEST) $(INCLUDES) -L./ -lftprintf main.c
 	make clean
 
 $(NAME): $(OBJECTS)

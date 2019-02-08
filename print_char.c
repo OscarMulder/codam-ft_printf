@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   check_format.c                                     :+:    :+:            */
+/*   print_char.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 12:01:23 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/08 13:51:50 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/08 14:46:44 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/08 14:46:53 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_fmt	*check_format(const char **format)
+static void put_padding(t_fmt *fmt)
 {
-	t_fmt	*fmt;
+	if (!fmt->opt[1] && !fmt->opt[2])
+		print_padding(' ', (fmt->width - 1));
+	if (fmt->opt[1] && !fmt->opt[2])
+		print_padding('0', (fmt->width - 1));
+}
 
-	fmt = new_fmt();
-	find_options(format, fmt);
-	find_width(format, fmt);
-	find_precision(format, fmt);
-	find_length(format, fmt);
-	find_conversion(format, fmt);
-	if (!fmt->conv)
-	{
-		free(fmt);
-		return (NULL);
-	}
-	return (fmt);
+int		print_char(t_fmt *fmt, int c)
+{
+	put_padding(fmt);
+	ft_putchar(c);
+	if (fmt->opt[2])
+		print_padding(' ', (fmt->width - 1));
+	if (fmt->width > 1)
+		return (fmt->width);
+	return (1);
 }

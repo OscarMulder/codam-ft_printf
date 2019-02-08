@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/08 16:15:05 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/08 16:39:56 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ void	find_escape(const char **format, t_fmt *fmt);
 int		print_int(t_fmt *fmt, int num);
 int		print_char(t_fmt *fmt, int c);
 int		print_charp(t_fmt *fmt, char *str);
+void	ft_putnbr_base(int n, int base, int up);
 
 #endif

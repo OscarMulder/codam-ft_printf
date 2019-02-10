@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 13:52:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/08 16:15:18 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/10 10:28:28 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		print_var(t_fmt *fmt, va_list ap)
 	if (is_double(fmt->conv))
 		return (0);
 	if (is_char(fmt->conv))
-		return(print_char(fmt, va_arg(ap, int)));
+		return (print_char(fmt, va_arg(ap, int)));
 	if (is_wcharp(fmt->conv, fmt->length))
 		return (0);
 	if (is_charp(fmt->conv))

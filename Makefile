@@ -6,7 +6,7 @@
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/05 07:59:03 by omulder        #+#    #+#                 #
-#    Updated: 2019/02/08 16:41:50 by omulder       ########   odam.nl          #
+#    Updated: 2019/02/10 11:57:24 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ INCLUDES = -I./ -I./libft/
 VPATH = ./libft/
 LIBFT = ft_putchar.c ft_rputstr.c ft_rputnbr.c ft_putnbr.c ft_atoi.c \
 ft_intlen.c ft_isdigit.c ft_itoa.c ft_isspace.c ft_putnnbr.c ft_rputchar.c \
-ft_strlen.c ft_putstr.c ft_putnstr.c ft_putnbr_base.c
+ft_strlen.c ft_putstr.c ft_putnstr.c ft_putnbr_base.c ft_putlong_base.c
 SRCS = ft_printf.c debug_printfmt.c check_format.c find_conversion.c \
 find_length.c find_options.c find_precision.c find_width.c is_conversion.c \
 is_length.c is_flag.c new_fmt.c is_char.c is_charp.c is_double.c is_int.c \

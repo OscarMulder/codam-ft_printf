@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/01 16:36:22 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/08 14:17:31 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/10 10:25:24 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int		ft_printf(const char *format, ...)
 {
 	va_list ap;
-	int len;
-	t_fmt *fmt;
+	int		len;
+	t_fmt	*fmt;
 
 	len = 0;
 	va_start(ap, format);

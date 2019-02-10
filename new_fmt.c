@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 12:05:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/07 16:31:32 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/10 10:27:34 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_fmt	*new_fmt(void)
 {
-	int i;
-	t_fmt *fmt;
+	int		i;
+	t_fmt	*fmt;
 
 	fmt = (t_fmt*)malloc(sizeof(fmt));
 	i = 0;

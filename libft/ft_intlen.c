@@ -6,21 +6,23 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/14 19:21:44 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/07 17:22:06 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/10 11:29:05 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_intlen(int n)
+int		ft_intlen(int n, int base)
 {
-	int len;
+	int				len;
+	unsigned int	num;
 
+	num = (unsigned int)n;
 	len = 1;
-	if (n != 0)
+	if (num != 0)
 		len--;
-	while (n != 0)
+	while (num != 0)
 	{
 		len++;
-		n /= 10;
+		num /= base;
 	}
 	return (len);
 }

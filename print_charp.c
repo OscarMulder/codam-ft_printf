@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/08 16:14:44 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/08 16:24:48 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/10 10:28:03 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void		put_padding(t_fmt *fmt, int slen)
 		print_padding('0', (fmt->width - slen));
 }
 
-int		print_charp(t_fmt *fmt, char *str)
+int				print_charp(t_fmt *fmt, char *str)
 {
 	int	slen;
 

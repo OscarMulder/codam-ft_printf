@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/08 16:36:09 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/08 16:44:04 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/08 16:45:11 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putnbr_base(int n, int base, int up)
 		ptr = upc;
 	else
 		ptr = low;
-	if (n < 0)
+	if (n < 0 && base == 10)
 	{
 		ft_putchar('-');
 		if (n < -(base - 1))

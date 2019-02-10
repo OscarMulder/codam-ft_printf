@@ -6,7 +6,7 @@
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/05 07:59:03 by omulder        #+#    #+#                 #
-#    Updated: 2019/02/10 11:57:24 by omulder       ########   odam.nl          #
+#    Updated: 2019/02/10 20:12:10 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = ft_printf.c debug_printfmt.c check_format.c find_conversion.c \
 find_length.c find_options.c find_precision.c find_width.c is_conversion.c \
 is_length.c is_flag.c new_fmt.c is_char.c is_charp.c is_double.c is_int.c \
 is_longint.c is_voidp.c is_wcharp.c print_var.c find_escape.c print_int.c \
-print_char.c print_padding.c print_charp.c
+print_char.c print_padding.c print_charp.c is_long.c
 OBJECTS = $(SRCS:.c=.o) $(LIBFT:.c=.o)
 
 all: $(OBJECTS) $(NAME) clean $(TEST)

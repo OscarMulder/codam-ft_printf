@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 13:52:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/10 10:28:28 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/10 20:11:44 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int		print_var(t_fmt *fmt, va_list ap)
 {
 	if (fmt->conv == '%')
 		return (print_char(fmt, '%'));
+	if (is_long(fmt->conv, fmt->length))
+		return (print_int(fmt, va_arg(ap, long long)));
 	if (is_int(fmt->conv))
 		return (print_int(fmt, va_arg(ap, int)));
 	if (is_double(fmt->conv))

@@ -6,16 +6,16 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/14 19:21:44 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/10 11:29:05 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/10 20:21:26 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_intlen(int n, int base)
+int		ft_intlen(long long n, int base)
 {
-	int				len;
-	unsigned int	num;
+	int					len;
+	unsigned long long	num;
 
-	num = (unsigned int)n;
+	num = (unsigned long long)n;
 	len = 1;
 	if (num != 0)
 		len--;

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_int.c                                           :+:    :+:            */
+/*   is_long.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 13:50:19 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/10 20:07:20 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/10 20:09:51 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/10 20:12:34 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_int(char c)
+int			is_long(char c, int l)
 {
-	if (c == 'd' || c == 'i' || c == 'o')
-		return (1);
-	if (c == 'u')
-		return (1);
+	if (is_int(c))
+	{
+		if (l == 'l' || l == ('l' + 'l'))
+			return (1);
+	}
 	return (0);
 }

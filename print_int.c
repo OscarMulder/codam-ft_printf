@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/08 14:29:02 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/10 11:55:37 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/10 20:06:34 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 static int		find_case(char c)
 {
 	if (c == 'x')
-	{
 		return (0);
-	}
 	return (1);
 }
 
@@ -65,7 +63,7 @@ static void		put_paddingandsign(t_fmt *fmt, int num, int ilen)
 		print_padding('0', (fmt->width - ilen));
 }
 
-int				print_int(t_fmt *fmt, int num)
+int				print_int(t_fmt *fmt, long long num)
 {
 	int ilen;
 

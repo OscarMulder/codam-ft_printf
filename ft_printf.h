@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/10 20:22:24 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/11 18:51:58 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void			find_precision(const char **format, t_fmt *fmt);
 void			find_width(const char **format, t_fmt *fmt);
 void			find_options(const char **format, t_fmt *fmt);
 t_fmt			*new_fmt(void);
+int				find_case(char c);
+int				find_base(char c);
 int				is_length(char c);
 int				is_conversion(char c);
 int				is_flag(char c);
@@ -53,10 +55,23 @@ void			ft_putnnbr(int n, int len);
 int				ft_rputchar(int c);
 int				print_padding(char c, int size);
 void			find_escape(const char **format, t_fmt *fmt);
-int				print_int(t_fmt *fmt, long long num);
+int				print_int(t_fmt *fmt, int num);
 int				print_char(t_fmt *fmt, int c);
 int				print_charp(t_fmt *fmt, char *str);
 void			ft_putnbr_base(int n, int base, int up);
 void			ft_putlong_base(long long n, int base, int up);;
-
+int				ft_longlen(long long n, int base);
+int				print_long(t_fmt *fmt, long long num);
+int				print_prehex(int hash, char c);
+int				is_unsigned(char c);
+void			ft_putulong_base(unsigned long long n, int base, int up);
+void			ft_putunbr_base(unsigned int n, int base, int up);
+int				ft_ulonglen(unsigned long long n, int base);
+int				ft_uintlen(unsigned int n, int base);
+int				print_uint(t_fmt *fmt, unsigned int num);
+int				print_ulong(t_fmt *fmt, unsigned long long num);
+int				is_short(int l);
+void			ft_putcharsign(int c);
+int				is_charsign(char c, int l);
+int				print_charsign(t_fmt *fmt, int c);
 #endif

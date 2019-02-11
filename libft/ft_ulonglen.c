@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_int.c                                           :+:    :+:            */
+/*   ft_ulonglen.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 13:50:19 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/11 12:21:04 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/11 12:15:08 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/11 14:10:59 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_int(char c)
+int		ft_ulonglen(unsigned long long n, int base)
 {
-	if (c == 'd' || c == 'i' || c == 'o')
-		return (1);
-	if (c == 'u' || c == 'x' || c == 'X')
-		return (1);
-	return (0);
+	int					len;
+
+	len = 1;
+	if (n != 0)
+		len--;
+	while (n != 0)
+	{
+		len++;
+		n /= base;
+	}
+	return (len);
 }

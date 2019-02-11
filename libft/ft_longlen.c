@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_int.c                                           :+:    :+:            */
+/*   ft_longlen.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 13:50:19 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/11 12:21:04 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/11 12:15:08 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/11 18:26:39 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_int(char c)
+int		ft_longlen(long long n, int base)
 {
-	if (c == 'd' || c == 'i' || c == 'o')
-		return (1);
-	if (c == 'u' || c == 'x' || c == 'X')
-		return (1);
-	return (0);
+	int					len;
+	unsigned long long	num;
+
+	if (n < 0 && base == 10)
+		num = (unsigned long long) (n * - 1);
+	else
+		num = (unsigned long long)n;
+	len = 1;
+	if (num != 0)
+		len--;
+	while (num != 0)
+	{
+		len++;
+		num /= base;
+	}
+	return (len);
 }

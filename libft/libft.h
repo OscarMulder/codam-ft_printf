@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/09 11:10:09 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/10 20:22:31 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/11 17:58:19 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			*ft_memchr(const void *s, int c, size_t n);
-int				ft_intlen(long long n, int base);
+int				ft_intlen(int n, int base);
+
 #endif

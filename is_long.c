@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/10 20:09:51 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/10 20:12:34 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/11 14:21:28 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ int			is_long(char c, int l)
 {
 	if (is_int(c))
 	{
-		if (l == 'l' || l == ('l' + 'l'))
+		if (l == 'l' || l == ('l' + 'l') || l == 'j')
 			return (1);
 	}
+	if (is_longint(c))
+		return (1);
 	return (0);
 }

@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_int.c                                           :+:    :+:            */
+/*   ft_putshort.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 13:50:19 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/11 12:21:04 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/11 20:03:36 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/11 20:06:04 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_int(char c)
+void	ft_putshort(int c)
 {
-	if (c == 'd' || c == 'i' || c == 'o')
-		return (1);
-	if (c == 'u' || c == 'x' || c == 'X')
-		return (1);
-	return (0);
+	char cs;
+
+	cs = (signed char)c;
+	if (cs < 0)
+	{
+		if (cs < -9)
+			ft_putshort((cs / 10) * -1);
+		ft_putchar(-(cs % 10) + '0');
+	}
+	else
+	{
+		if (cs > 9)
+			ft_putshort(cs / 10);
+		ft_putchar((cs % 10) + '0');
+	}
 }

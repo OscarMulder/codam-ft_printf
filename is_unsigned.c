@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_int.c                                           :+:    :+:            */
+/*   is_unsigned.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 13:50:19 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/11 12:21:04 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/11 13:43:34 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/11 14:20:32 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_int(char c)
+int		is_unsigned(char c)
 {
-	if (c == 'd' || c == 'i' || c == 'o')
-		return (1);
-	if (c == 'u' || c == 'x' || c == 'X')
+	if (c == 'u' || c == 'U')
 		return (1);
 	return (0);
 }

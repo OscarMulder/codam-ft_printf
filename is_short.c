@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_int.c                                           :+:    :+:            */
+/*   is_short.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 13:50:19 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/11 12:21:04 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/11 18:39:13 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/11 18:39:54 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_int(char c)
+int		is_short(int l)
 {
-	if (c == 'd' || c == 'i' || c == 'o')
-		return (1);
-	if (c == 'u' || c == 'x' || c == 'X')
+	if (l == 'h')
 		return (1);
 	return (0);
 }

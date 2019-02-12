@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_long.c                                          :+:    :+:            */
+/*   ft_putcharsign.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/10 20:09:51 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/12 15:02:26 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/12 15:07:22 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/12 15:08:10 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			is_long(char c, int l)
+void	ft_putcharsign(int c)
 {
-	if (is_int(c))
+	char cs;
+
+	cs = (char)c;
+	if (cs < 0)
 	{
-		if (l == 'l' || l == ('l' + 'l') || l == 'j')
-			return (1);
-		if (l == 'z')
-			return (1);
+		if (cs < -9)
+			ft_putcharsign((cs / 10) * -1);
+		ft_putchar(-(cs % 10) + '0');
 	}
-	if (is_longint(c))
-		return (1);
-	return (0);
+	else
+	{
+		if (cs > 9)
+			ft_putcharsign(cs / 10);
+		ft_putchar((cs % 10) + '0');
+	}
 }

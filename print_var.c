@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 13:52:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/12 14:33:47 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/12 15:10:40 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		print_var(t_fmt *fmt, va_list ap)
 	if (is_char(fmt->conv))
 		return (print_char(fmt, va_arg(ap, int)));
 	if (is_charsign(fmt->conv, fmt->length))
-		return (print_int(fmt, va_arg(ap, int)));
+		return (print_int(fmt, (signed char)va_arg(ap, int)));
 	if (is_wcharp(fmt->conv, fmt->length))
 		return (0);
 	if (is_charp(fmt->conv))

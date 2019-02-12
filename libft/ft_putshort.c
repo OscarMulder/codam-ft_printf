@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/11 20:03:36 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/12 14:21:08 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/12 14:55:24 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_putshort(int c)
 {
-	char cs;
+	short cs;
 
-	cs = (signed char)c;
+	cs = (short)c;
 	if (cs < 0)
 	{
 		if (cs < -9)

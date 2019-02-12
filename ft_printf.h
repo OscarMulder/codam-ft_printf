@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/11 18:51:58 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/12 14:36:54 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,6 @@ int				is_short(int l);
 void			ft_putcharsign(int c);
 int				is_charsign(char c, int l);
 int				print_charsign(t_fmt *fmt, int c);
+int				print_short(t_fmt *fmt, short num);
+void			ft_putshort(int c);
 #endif

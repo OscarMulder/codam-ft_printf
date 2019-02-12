@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 13:52:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/11 18:57:47 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/12 14:33:47 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int		print_var(t_fmt *fmt, va_list ap)
 	if (is_int(fmt->conv) && !is_short(fmt->length) &&
 	!is_charsign(fmt->conv, fmt->length))
 	 	return (print_int(fmt, va_arg(ap, int)));
+	if (is_int(fmt->conv) && is_short(fmt->length))
+		return (print_short(fmt, va_arg(ap, int)));
 	if (is_double(fmt->conv))
 		return (0);
 	if (is_char(fmt->conv))

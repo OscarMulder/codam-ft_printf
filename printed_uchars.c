@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   print_ulong.c                                      :+:    :+:            */
+/*   printed_uchars.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/11 12:06:33 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/12 16:06:57 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/12 16:00:06 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/12 16:00:08 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			print_ulong(t_fmt *fmt, unsigned long long num)
+int		printed_uchars(t_fmt *fmt, unsigned long long num)
 {
-	int ilen;
+	int	ilen;
 
 	ilen = ft_ulonglen(num, find_base(fmt->conv));
-	if (fmt->prec > ilen)
-		ilen = fmt->prec;
-	put_upaddingandsign(fmt, num, ilen);
-	if (fmt->prec != -1)
-		print_padding('0', (fmt->prec - ft_ulonglen(num, find_base(fmt->conv))));
-	if (fmt->opt[2])
-		print_prehex(fmt->opt[0], fmt->conv);
-	ft_putulong_base(num, find_base(fmt->conv), find_case(fmt->conv));
-	put_backpadding(fmt, num, ilen);
-	return (printed_uchars(fmt, num));
+	if (fmt->opt[0] && (fmt->conv == 'x' || fmt->conv == 'X') && num != 0)
+		ilen += 2;
+	if (fmt->prec > ilen || fmt->width > ilen)
+	{
+		if (fmt->prec > fmt->width)
+			ilen = fmt->prec;
+		else
+			ilen = fmt->width;
+	}
+	return (ilen);
 }

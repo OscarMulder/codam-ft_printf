@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/12 16:05:50 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/16 13:35:35 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,14 @@ int				is_charsign(char c, int l);
 int				print_short(t_fmt *fmt, short num);
 void			ft_putshort(int c);
 int				print_charsign(t_fmt *fmt, signed char num);
-int      	   is_hex(char c, int l);
-int		printed_chars(t_fmt *fmt, long long num);
-int		printed_uchars(t_fmt *fmt, unsigned long long num);
-void		put_backpadding(t_fmt *fmt, long long num, int ilen);
-void		put_paddingandsign(t_fmt *fmt, long long num, int ilen);
-void		put_upaddingandsign(t_fmt *fmt, unsigned long long num, int ilen);
+int      		is_hex(char c, int l);
+int				printed_chars(t_fmt *fmt, long long num);
+int				printed_uchars(t_fmt *fmt, unsigned long long num);
+void			put_backpadding(t_fmt *fmt, long long num, int ilen);
+void			put_paddingandsign(t_fmt *fmt, long long num, int ilen);
+void			put_upaddingandsign(t_fmt *fmt, unsigned long long num, int ilen);
+double			ft_pow(double x, double y);
+int				print_double(t_fmt *fmt, double num);
+int				is_option(char c);
+
 #endif

@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   find_conversion.c                                  :+:    :+:            */
+/*   ft_pow.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 12:02:07 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/16 13:19:54 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/14 15:29:06 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/14 15:34:58 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	find_conversion(const char **format, t_fmt *fmt)
+double	ft_pow(double x, double y)
 {
-	while (is_option(**format) && !is_conversion(**format))
-		(*format)++;
-	if (is_conversion(**format))
+	int i;
+	int f;
+
+	i = 1;
+	f = x;
+	while (i < y)
 	{
-		fmt->conv = **format;
-		(*format)++;
+		x *= f;
+		i++;
 	}
+	return (x);
 }

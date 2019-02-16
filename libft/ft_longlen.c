@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/11 12:15:08 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/11 18:26:39 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/16 15:14:47 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_longlen(long long n, int base)
 	unsigned long long	num;
 
 	if (n < 0 && base == 10)
-		num = (unsigned long long) (n * - 1);
+		num = (unsigned long long)(n * -1);
 	else
 		num = (unsigned long long)n;
 	len = 1;

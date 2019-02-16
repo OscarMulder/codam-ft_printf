@@ -6,18 +6,18 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 15:52:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/12 15:56:44 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/16 15:12:28 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int         is_hex(char c, int l)
+int		is_hex(char c, int l)
 {
-    if (c == 'x' || c == 'X')
-    {
-        if (l != 'j')
-            return (1);
-    }
-    return (0);
+	if (c == 'x' || c == 'X')
+	{
+		if (l != 'j')
+			return (1);
+	}
+	return (0);
 }

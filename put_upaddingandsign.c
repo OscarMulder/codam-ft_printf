@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 16:06:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/12 16:06:34 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/16 15:16:40 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void		put_upaddingandsign(t_fmt *fmt, unsigned long long num, int ilen)
 	{
 		if (fmt->opt[0] && (fmt->conv == 'x' || fmt->conv == 'X') && num != 0)
 		{
-			print_prehex(fmt->opt[0], fmt->conv);			
+			print_prehex(fmt->opt[0], fmt->conv);
 			print_padding('0', (fmt->width - ilen) - 2);
 		}
 		else

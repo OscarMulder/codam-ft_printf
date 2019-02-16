@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/14 12:42:35 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/16 10:27:16 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/16 15:15:12 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,3 @@ int		print_double(t_fmt *fmt, double num)
 		print_int(fmt, num);
 	return (0);
 }
-
-// int		main(void)
-// {
-// 	float n;
-
-// 	n = -42.30945;
-// 	printf("%12.f\n", n);
-// 	ft_printf("%12.f\n", n);
-// 	return (0);
-// }

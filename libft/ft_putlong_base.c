@@ -6,12 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/08 16:36:09 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/11 20:02:42 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/16 15:14:56 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h> //rm
 
 void	ft_putlong_base(long long n, int base, int up)
 {

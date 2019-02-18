@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   check_format.c                                     :+:    :+:            */
+/*   reset_fmt.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 12:01:23 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/18 14:36:02 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/18 12:54:38 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/18 14:40:05 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_fmt	check_format(t_fmt fmt, const char **format)
+t_fmt	reset_fmt(t_fmt fmt)
 {
-	fmt = find_options(format, fmt);
-	fmt = find_width(format, fmt);
-	fmt = find_precision(format, fmt);
-	fmt = find_length(format, fmt);
-	fmt = find_conversion(format, fmt);
+	int i;
+
+	i = 0;
+	while (i < 6)
+	{
+		fmt.opt[i] = 0;
+		i++;
+	}
+	fmt.width = -1;
+	fmt.prec = -1;
+	fmt.length= -1;
+	fmt.conv = '\0';
 	return (fmt);
 }

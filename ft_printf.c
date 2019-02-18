@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/01 16:36:22 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/16 15:07:14 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/18 14:46:23 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_printf(const char *format, ...)
 {
 	va_list ap;
 	int		len;
-	t_fmt	*fmt;
+	t_fmt	fmt;
 
 	len = 0;
 	va_start(ap, format);
@@ -25,13 +25,10 @@ int		ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			fmt = check_format(&format);
+			fmt = reset_fmt(fmt);
+			fmt = check_format(fmt, &format);
 			//debug_printfmt(fmt);
-			if (fmt != NULL)
-			{
-				len += print_var(fmt, ap);
-				free(fmt);
-			}
+			len += print_var(fmt, ap);
 		}
 		else
 		{

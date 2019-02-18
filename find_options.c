@@ -6,29 +6,30 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 12:05:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/16 14:46:25 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/18 14:46:54 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	set_option(char c, t_fmt *fmt)
+static t_fmt	set_option(char c, t_fmt fmt)
 {
 	if (c == '#')
-		fmt->opt[0] = 1;
+		fmt.opt[0] = 1;
 	if (c == '0')
-		fmt->opt[1] = 1;
+		fmt.opt[1] = 1;
 	if (c == '-')
-		fmt->opt[2] = 1;
+		fmt.opt[2] = 1;
 	if (c == ' ')
-		fmt->opt[3] = 1;
+		fmt.opt[3] = 1;
 	if (c == '+')
-		fmt->opt[4] = 1;
+		fmt.opt[4] = 1;
 	if (c == '\'')
-		fmt->opt[5] = 1;
+		fmt.opt[5] = 1;
+	return (fmt);
 }
 
-void		find_options(const char **format, t_fmt *fmt)
+t_fmt		find_options(const char **format, t_fmt fmt)
 {
 	const char *tmp;
 
@@ -37,15 +38,16 @@ void		find_options(const char **format, t_fmt *fmt)
 	{
 		if (!ft_isdigit(*tmp) || *tmp == '0')
 		{
-			set_option(*tmp, fmt);
+			fmt = set_option(*tmp, fmt);
 		}
 		while (ft_isdigit(*tmp))
 			tmp++;
 		if (is_flag(*tmp))
 		{
 			if (*tmp != '0')
-				set_option(*tmp, fmt);
+				fmt = set_option(*tmp, fmt);
 		}
 		tmp++;
 	}
+	return (fmt);
 }

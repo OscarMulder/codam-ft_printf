@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 15:52:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/16 15:12:28 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/19 16:26:05 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ int		is_hex(char c, int l)
 	{
 		if (l != 'j')
 			return (1);
+	}
+	if (c == 'p')
+	{
+		return (1);
 	}
 	return (0);
 }

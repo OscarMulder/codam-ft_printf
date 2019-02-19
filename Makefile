@@ -6,7 +6,7 @@
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/05 07:59:03 by omulder        #+#    #+#                 #
-#    Updated: 2019/02/18 13:06:48 by omulder       ########   odam.nl          #
+#    Updated: 2019/02/19 14:14:16 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ print_prehex.c is_unsigned.c print_ulong.c print_uint.c is_short.c \
 print_charsign.c is_charsign.c print_short.c find_case.c find_base.c \
 is_hex.c printed_chars.c printed_uchars.c put_backpadding.c \
 put_upaddingandsign.c put_paddingandsign.c print_double.c is_option.c \
-reset_fmt.c
+reset_fmt.c print_pointer.c
 OBJECTS = $(SRCS:.c=.o) $(LIBFT:.c=.o)
 
 all: $(OBJECTS) $(NAME)

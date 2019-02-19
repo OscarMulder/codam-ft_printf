@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 16:06:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/18 14:43:50 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/19 16:29:41 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void		put_upaddingandsign(t_fmt fmt, unsigned long long num, int ilen)
 {
 	if (!fmt.opt[2] && (!fmt.opt[1] || fmt.prec != -1))
 	{
-		if (fmt.opt[0] && (fmt.conv == 'x' || fmt.conv == 'X') && num != 0)
+		if (fmt.opt[0] && is_hex(fmt.conv, fmt.length) && (num != 0 || fmt.conv == 'p'))
 		{
 			print_padding(' ', (fmt.width - ilen) - 2);
 			print_prehex(fmt.opt[0], fmt.conv);
@@ -26,7 +26,7 @@ void		put_upaddingandsign(t_fmt fmt, unsigned long long num, int ilen)
 	}
 	if (!fmt.opt[2] && fmt.opt[1] && fmt.prec == -1)
 	{
-		if (fmt.opt[0] && (fmt.conv == 'x' || fmt.conv == 'X') && num != 0)
+		if (fmt.opt[0] && is_hex(fmt.conv, fmt.length) && (num != 0 || fmt.conv == 'p'))
 		{
 			print_prehex(fmt.opt[0], fmt.conv);
 			print_padding('0', (fmt.width - ilen) - 2);

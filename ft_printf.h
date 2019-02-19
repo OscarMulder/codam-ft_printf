@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/18 14:45:39 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/19 14:13:58 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ int				print_double(t_fmt fmt, double num);
 int				is_option(char c);
 t_fmt  			reset_fmt(t_fmt fmt);
 t_fmt			check_format(t_fmt fmt, const char **format);
+int				print_pointer(t_fmt fmt, unsigned long long num);
 
 #endif

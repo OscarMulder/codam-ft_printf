@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 15:39:57 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/12 15:40:02 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/19 16:42:42 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		find_case(char c)
 {
-	if (c == 'x')
+	if (c == 'x' || c == 'p')
 		return (0);
 	return (1);
 }

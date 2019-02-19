@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 13:51:24 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/07 13:51:26 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/19 14:48:55 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		is_charp(char c)
 {
-	if (c == 's')
+	if (c == 's' || c == 'S')
 		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/11 12:06:33 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/18 14:44:27 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/19 14:43:11 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,7 @@ int			print_long(t_fmt fmt, long long num)
 	if (fmt.opt[2])
 		print_prehex(fmt.opt[0], fmt.conv);
 	if (fmt.prec != 0)
-	{
-		if (find_base(fmt.conv) == 8)
-			ft_putchar('0');
 		ft_putlong_base(num, find_base(fmt.conv), find_case(fmt.conv));
-	}
 	put_backpadding(fmt, num, ilen);
 	return (printed_chars(fmt, num));
 }

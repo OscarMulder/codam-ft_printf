@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_unsigned.c                                      :+:    :+:            */
+/*   ft_shortlen.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/11 13:43:34 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/20 14:11:23 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/20 12:59:47 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/20 13:00:39 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int		is_unsigned(char c)
+int		ft_ushortlen(unsigned short n, int base)
 {
-	if (c == 'u' || c == 'U')
-		return (1);
-	if (c == 'o' || c == 'O')
-		return (1);
-	return (0);
+	int	len;
+
+	len = 1;
+	if (n != 0)
+		len--;
+	while (n != 0)
+	{
+		len++;
+		n /= base;
+	}
+	return (len);
 }

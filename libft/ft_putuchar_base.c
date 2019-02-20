@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_unsigned.c                                      :+:    :+:            */
+/*   ft_putuchar_base.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/11 13:43:34 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/20 14:11:23 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/20 13:33:12 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/20 13:36:26 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_unsigned(char c)
+void	ft_putuchar_base(unsigned char n, int base, int up)
 {
-	if (c == 'u' || c == 'U')
-		return (1);
-	if (c == 'o' || c == 'O')
-		return (1);
-	return (0);
+	const char		upc[] = "0123456789ABCDEF";
+	const char		low[] = "0123456789abcdef";
+	const char		*ptr;
+
+	if (up)
+		ptr = upc;
+	else
+		ptr = low;
+	if (n > (unsigned char)(base - 1))
+		ft_putuchar_base(n / base, base, up);
+	ft_putchar(ptr[(n % base)]);
 }

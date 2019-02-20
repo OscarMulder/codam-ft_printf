@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putchar.c                                       :+:    :+:            */
+/*   ft_ucharlen.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/09 11:27:12 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/11 18:47:28 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/20 13:30:58 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/20 13:31:14 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-void	ft_putchar(int c)
+int		ft_ucharlen(unsigned char n, int base)
 {
-	unsigned char uc;
+	int	len;
 
-	uc = (unsigned char)c;
-	write(1, &uc, 1);
+	len = 1;
+	if (n != 0)
+		len--;
+	while (n != 0)
+	{
+		len++;
+		n /= base;
+	}
+	return (len);
 }

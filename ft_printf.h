@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/19 14:13:58 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/20 14:34:27 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int				ft_rputchar(int c);
 int				print_padding(char c, int size);
 void			find_escape(const char **format, t_fmt *fmt);
 int				print_int(t_fmt fmt, int num);
-int				print_char(t_fmt fmt, int c);
+int				print_char(t_fmt fmt, unsigned int c);
 int				print_charp(t_fmt fmt, char *str);
 void			ft_putnbr_base(int n, int base, int up);
 void			ft_putlong_base(long long n, int base, int up);;
@@ -87,5 +87,16 @@ int				is_option(char c);
 t_fmt  			reset_fmt(t_fmt fmt);
 t_fmt			check_format(t_fmt fmt, const char **format);
 int				print_pointer(t_fmt fmt, unsigned long long num);
+void			ft_putwstr(wchar_t const *s);
+void			ft_putnwstr(wchar_t const *s, size_t len);
+size_t			ft_wstrlen(const wchar_t *s, int prec);
+int				print_wcharp(t_fmt fmt, wchar_t *str);
+int				is_ushort(t_fmt fmt);
+int				print_ushort(t_fmt fmt, short num);
+void			ft_putushort_base(unsigned short n, int base, int up);
+int				is_uchar(t_fmt fmt);
+int				ft_ucharlen(unsigned char n, int base);
+void			ft_putuchar_base(unsigned char n, int base, int up);
+int				print_uchar(t_fmt fmt, unsigned char num);
 
 #endif

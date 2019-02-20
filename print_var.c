@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 13:52:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/19 17:13:34 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/20 14:14:15 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ int		print_var(t_fmt fmt, va_list ap)
 		return (0);
 	if (fmt.conv == '%')
 		return (print_char(fmt, '%'));
+	if (is_ushort(fmt))
+		return (print_ushort(fmt, va_arg(ap, unsigned int)));
+	if (is_uchar(fmt))
+		return (print_uchar(fmt, va_arg(ap, unsigned int)));
 	if (is_unsigned(fmt.conv) && is_long(fmt.conv, fmt.length))
 		return (print_ulong(fmt, va_arg(ap, unsigned long long)));
 	if (is_unsigned(fmt.conv) && is_int(fmt.conv))
@@ -32,11 +36,11 @@ int		print_var(t_fmt fmt, va_list ap)
 	if (is_double(fmt.conv))
 		return (print_double(fmt, va_arg(ap, double)));
 	if (is_char(fmt.conv))
-		return (print_char(fmt, va_arg(ap, int)));
+		return (print_char(fmt, va_arg(ap, unsigned int)));
 	if (is_charsign(fmt.conv, fmt.length))
 		return (print_int(fmt, (signed char)va_arg(ap, int)));
 	if (is_wcharp(fmt.conv, fmt.length))
-		return (print_charp(fmt, va_arg(ap, char*)));
+		return (print_wcharp(fmt, va_arg(ap, wchar_t*)));
 	if (is_charp(fmt.conv))
 		return (print_charp(fmt, va_arg(ap, char*)));
 	if (is_voidp(fmt.conv))

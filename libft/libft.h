@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/09 11:10:09 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/11 17:58:19 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/20 15:14:27 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-void			ft_putchar(int c);
+int				ft_putchar(int c);
+int				ft_putchar_uni(unsigned int c);
 void			ft_printline(void);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr(char const *s);
@@ -91,5 +92,8 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_intlen(int n, int base);
+void			ft_putushort(unsigned int c);
+int				ft_ushortlen(unsigned short n, int base);
+size_t			ft_charsize(unsigned int c);
 
 #endif

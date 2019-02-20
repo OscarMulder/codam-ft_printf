@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 16:06:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/19 16:29:41 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/20 14:22:11 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void		put_upaddingandsign(t_fmt fmt, unsigned long long num, int ilen)
 		else
 			print_padding(' ', (fmt.width - ilen));
 	}
+	if (num == 0 && fmt.prec == 0 && fmt.width != -1)
+		ft_putchar(' ');
 	if (!fmt.opt[2] && fmt.opt[1] && fmt.prec == -1)
 	{
 		if (fmt.opt[0] && is_hex(fmt.conv, fmt.length) && (num != 0 || fmt.conv == 'p'))

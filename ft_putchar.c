@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_unsigned.c                                      :+:    :+:            */
+/*   ft_putchar.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/11 13:43:34 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/20 14:11:23 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/20 15:14:38 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/20 15:15:10 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		is_unsigned(char c)
+int		ft_putchar(int c)
 {
-	if (c == 'u' || c == 'U')
-		return (1);
-	if (c == 'o' || c == 'O')
-		return (1);
-	return (0);
+	char ca;
+
+	ca = (char)c;
+	write(1, &ca, 1);
+	return (1);
 }

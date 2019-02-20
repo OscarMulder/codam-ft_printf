@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/20 14:34:27 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/20 20:52:36 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int				ft_rputnbr(int n);
 void			debug_printfmt(t_fmt *fmt);
 t_fmt			find_conversion(const char **format, t_fmt fmt);
 t_fmt			find_length(const char **format, t_fmt fmt);
-t_fmt			find_precision(const char **format, t_fmt fmt);
-t_fmt			find_width(const char **format, t_fmt fmt);
+t_fmt			find_precision(const char **format, t_fmt fmt, va_list ap);
+t_fmt			find_width(const char **format, t_fmt fmt, va_list ap);
 t_fmt			find_options(const char **format, t_fmt fmt);
 t_fmt			*new_fmt(void);
 int				find_case(char c);
@@ -85,7 +85,7 @@ double			ft_pow(double x, double y);
 int				print_double(t_fmt fmt, double num);
 int				is_option(char c);
 t_fmt  			reset_fmt(t_fmt fmt);
-t_fmt			check_format(t_fmt fmt, const char **format);
+t_fmt			check_format(t_fmt fmt, const char **format, va_list ap);
 int				print_pointer(t_fmt fmt, unsigned long long num);
 void			ft_putwstr(wchar_t const *s);
 void			ft_putnwstr(wchar_t const *s, size_t len);
@@ -98,5 +98,6 @@ int				is_uchar(t_fmt fmt);
 int				ft_ucharlen(unsigned char n, int base);
 void			ft_putuchar_base(unsigned char n, int base, int up);
 int				print_uchar(t_fmt fmt, unsigned char num);
+int				ft_abs(int n);
 
 #endif

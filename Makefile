@@ -6,7 +6,7 @@
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/05 07:59:03 by omulder        #+#    #+#                 #
-#    Updated: 2019/02/20 15:16:28 by omulder       ########   odam.nl          #
+#    Updated: 2019/02/20 20:32:06 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ ft_strlen.c ft_putstr.c ft_putnstr.c ft_putnbr_base.c ft_putlong_base.c \
 ft_longlen.c ft_putunbr_base.c ft_putulong_base.c ft_uintlen.c ft_ulonglen.c \
 ft_putshort.c ft_putcharsign.c ft_pow.c ft_isalpha.c ft_putwstr.c \
 ft_putnwstr.c ft_wstrlen.c ft_putushort_base.c ft_ushortlen.c ft_ucharlen.c \
-ft_putuchar_base.c ft_putchar_uni.c
+ft_putuchar_base.c ft_putchar_uni.c ft_abs.c
 SRCS = ft_printf.c debug_printfmt.c check_format.c find_conversion.c \
 find_length.c find_options.c find_precision.c find_width.c is_conversion.c \
 is_length.c is_flag.c new_fmt.c is_char.c is_charp.c is_double.c is_int.c \

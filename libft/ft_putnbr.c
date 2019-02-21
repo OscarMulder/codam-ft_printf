@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/09 12:12:44 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 14:00:23 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 16:25:21 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_putnbr(long long n)
 	num = (int)n;
 	if (num < 0)
 	{
+		ft_putchar('-');
 		if (num < -9)
 			ft_putnbr((num / 10) * -1);
 		ft_putchar(-(num % 10) + '0');

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 12:05:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 12:54:07 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 16:31:41 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ t_fmt		find_options(const char **format, t_fmt fmt)
 			if (*tmp != '0')
 				fmt = set_option(*tmp, fmt);
 		}
-		tmp++;
+		if (*tmp && !is_conversion(*tmp))
+			tmp++;
 	}
 	return (fmt);
 }

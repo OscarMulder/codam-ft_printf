@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 16:06:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 12:53:37 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 17:53:58 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void		put_upaddingandsign(t_fmt fmt, unsigned long long num, int ilen)
 {
 	if (!fmt.MIN && (!fmt.ZERO || fmt.prec != -1))
 	{
-		if (fmt.HASH && is_hex(fmt.conv, fmt.length) && (num != 0 || fmt.conv == 'p'))
+		if (fmt.HASH && is_hex(fmt) && (num != 0 || fmt.conv == 'p'))
 		{
 			print_padding(' ', (fmt.width - ilen) - 2);
 			print_prehex(fmt);
@@ -28,7 +28,7 @@ void		put_upaddingandsign(t_fmt fmt, unsigned long long num, int ilen)
 		ft_putchar(' ');
 	if (!fmt.MIN && fmt.ZERO && fmt.prec == -1)
 	{
-		if (fmt.HASH && is_hex(fmt.conv, fmt.length) && (num != 0 || fmt.conv == 'p'))
+		if (fmt.HASH && is_hex(fmt) && (num != 0 || fmt.conv == 'p'))
 		{
 			print_prehex(fmt);
 			print_padding('0', (fmt.width - ilen) - 2);

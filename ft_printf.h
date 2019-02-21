@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 16:05:32 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 17:02:07 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int				is_charsign(t_fmt fmt);
 int				is_conversion(char c);
 int				is_double(t_fmt fmt);
 int				is_flag(char c);
+int				is_hex(t_fmt fmt);
 int				is_int(t_fmt fmt);
 int				is_length(char c);
 int				is_long(t_fmt fmt);
@@ -77,15 +78,16 @@ int				print_padding(char c, int size);
 int				print_pointer(t_fmt fmt, unsigned long long num);
 int				print_prehex(t_fmt fmt);
 int				print_short(t_fmt fmt, short num);
+int				print_signed(t_fmt fmt, long long num);
 int				print_uchar(t_fmt fmt, unsigned char num);
 int				print_uint(t_fmt fmt, unsigned int num);
 int				print_ulong(t_fmt fmt, unsigned long long num);
+int				print_unsigned(t_fmt fmt, unsigned long long num);
 int				print_ushort(t_fmt fmt, unsigned long long num);
 int				print_var(t_fmt fmt, va_list ap);
 int				print_wcharp(t_fmt fmt, wchar_t *str);
 int				printed_chars(t_fmt fmt, long long num);
 int				printed_uchars(t_fmt fmt, unsigned long long num);
-int      		is_hex(char c, int l);
 size_t			ft_wstrlen(const wchar_t *s, int prec);
 t_fmt			*new_fmt(void);
 t_fmt			check_format(t_fmt fmt, const char **format, va_list ap);
@@ -111,7 +113,5 @@ void			ft_putwstr(wchar_t const *s);
 void			put_backpadding(t_fmt fmt, long long num, int ilen);
 void			put_paddingandsign(t_fmt fmt, long long num, int ilen);
 void			put_upaddingandsign(t_fmt fmt, unsigned long long num, int ilen);
-int				print_unsigned(t_fmt fmt, unsigned long long num);
-int				print_signed(t_fmt fmt, long long num);
 
 #endif

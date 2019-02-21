@@ -6,14 +6,17 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 13:50:43 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/10 10:25:09 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 16:05:26 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_double(char c)
+int		is_double(t_fmt fmt)
 {
+	char c;
+
+	c = fmt.conv;
 	if (c == 'e' || c == 'E')
 		return (1);
 	if (c == 'f' || c == 'F')

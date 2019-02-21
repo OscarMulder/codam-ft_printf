@@ -6,20 +6,37 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/21 11:17:53 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 12:45:35 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 15:54:37 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			print_unsigned(t_fmt fmt, unsigned long long num,
-int (*ulen)(unsigned long long, int),
-void (*putu)(unsigned long long, int, int))
+static unsigned long long	typecast(t_fmt fmt, unsigned long long num)
+{
+	if (is_uchar(fmt))
+		return ((unsigned char)num);
+	if (is_ushort(fmt))
+		return ((unsigned short)num);
+	if (is_uint(fmt))
+		return ((unsigned int)num);
+	if (is_ulong(fmt))
+		return ((unsigned long long)num);
+	if (is_voidp(fmt))
+		return ((unsigned long long)num);
+	return ((unsigned long long)num);
+}
+
+
+int			print_unsigned(t_fmt fmt, unsigned long long num)
 {
 	int ilen;
 
-	ilen = ulen(num, find_base(fmt));
-	if (fmt.opt[0] && is_octal(fmt) && fmt.prec < (ilen + 1))
+	num = (typecast(fmt, num));
+	ilen = ft_ulonglen(num, find_base(fmt));
+	if (is_voidp(fmt))
+		fmt.HASH = 1;
+	if (fmt.HASH && is_octal(fmt) && fmt.prec < (ilen + 1))
 	{
 		if (num == 0)
 			ilen--;
@@ -29,11 +46,11 @@ void (*putu)(unsigned long long, int, int))
 		ilen = fmt.prec;
 	put_upaddingandsign(fmt, num, ilen);
 	if (fmt.prec != -1)
-		print_padding('0', (fmt.prec - ulen(num, find_base(fmt))));
-	if (fmt.opt[2])
-		print_prehex(fmt.opt[0], fmt.conv);
+		print_padding('0', (fmt.prec - ft_ulonglen(num, find_base(fmt))));
+	if (fmt.MIN)
+		print_prehex(fmt);
 	if (!(fmt.prec == 0 && num == 0))
-		putu(num, find_base(fmt), find_case(fmt));
+		ft_putulong_base(num, find_base(fmt), find_case(fmt));
 	put_backpadding(fmt, num, ilen);
 	return (printed_uchars(fmt, num));
 }

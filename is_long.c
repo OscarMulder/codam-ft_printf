@@ -6,22 +6,27 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/10 20:09:51 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/20 14:14:52 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 14:35:45 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			is_long(char c, int l)
+int			is_long(t_fmt fmt)
 {
-	if (is_int(c))
+	char c;
+	int l;
+
+	c = fmt.conv;
+	l = fmt.length;
+	if (is_int(fmt))
 	{
 		if (l == 'l' || l == ('l' + 'l') || l == 'j')
 			return (1);
 		if (l == 'z')
 			return (1);
 	}
-	if (is_longint(c))
+	if (c == 'D')
 		return (1);
 	return (0);
 }

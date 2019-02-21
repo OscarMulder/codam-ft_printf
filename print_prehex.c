@@ -6,14 +6,19 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/11 12:41:39 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/19 16:26:25 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 12:51:34 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		print_prehex(int hash, char c)
+int		print_prehex(t_fmt fmt)
 {
+	int		hash;
+	char	c;
+
+	hash = fmt.HASH;
+	c = fmt.conv;
 	if (hash)
 	{
 		if (c == 'X')

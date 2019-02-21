@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/14 19:21:44 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/11 18:26:46 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 14:47:28 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_intlen(int n, int base)
+int		ft_intlen(long long n, int base)
 {
 	int					len;
 	unsigned int		num;

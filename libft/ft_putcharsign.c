@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 15:07:22 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/12 15:08:10 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 14:02:39 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putcharsign(int c)
+void	ft_putcharsign(long long c)
 {
 	char cs;
 

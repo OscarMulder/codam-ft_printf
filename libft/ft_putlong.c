@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   print_pointer.c                                    :+:    :+:            */
+/*   ft_putlong.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/19 14:11:25 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 12:51:34 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/21 14:01:23 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/21 14:23:12 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		print_pointer(t_fmt fmt, unsigned long long num)
+void	ft_putlong(long long n)
 {
-	int ret;
-
-	ret = 0;
-	fmt.HASH = 1;
-	return (ret + print_ulong(fmt, num));
+	if (n < 0)
+	{
+		if (n < -9)
+			ft_putlong((n / 10) * -1);
+		ft_putchar(-(n % 10) + '0');
+	}
+	else
+	{
+		if (n > 9)
+			ft_putlong(n / 10);
+		ft_putchar((n % 10) + '0');
+	}
 }

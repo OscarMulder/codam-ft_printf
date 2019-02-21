@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 12:05:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/18 14:46:54 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 12:54:07 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 static t_fmt	set_option(char c, t_fmt fmt)
 {
 	if (c == '#')
-		fmt.opt[0] = 1;
+		fmt.HASH = 1;
 	if (c == '0')
-		fmt.opt[1] = 1;
+		fmt.ZERO = 1;
 	if (c == '-')
-		fmt.opt[2] = 1;
+		fmt.MIN = 1;
 	if (c == ' ')
-		fmt.opt[3] = 1;
+		fmt.SPACE = 1;
 	if (c == '+')
-		fmt.opt[4] = 1;
+		fmt.PLUS = 1;
 	if (c == '\'')
-		fmt.opt[5] = 1;
+		fmt.APST = 1;
 	return (fmt);
 }
 

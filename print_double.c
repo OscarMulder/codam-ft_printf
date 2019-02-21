@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/14 12:42:35 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/20 21:13:31 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 15:06:43 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ int				print_double(t_fmt fmt, double num)
 	if (prec != 0 && prec != -1)
 		fmt.width = (fmt.width - fmt.prec - 1);
 	fmt.prec = -1;
-	fmt.conv = 'd';
-	ret += print_long(fmt, n);
+	fmt.conv = 'D';
+	ret += print_signed(fmt, n);
 	if (prec != 0)
 		ret += ft_putchar('.');
 	neg = 0;
@@ -57,6 +57,6 @@ int				print_double(t_fmt fmt, double num)
 	fmt.width = -1;
 	fmt.prec = prec;
 	if (prec != 0)
-		ret += print_long(fmt, num);
+		ret += print_signed(fmt, num);
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/20 20:52:36 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 12:46:07 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ typedef struct	s_fmt
 int				ft_printf(const char *format, ...);
 int				ft_rputstr(char const *s);
 int				ft_rputnbr(int n);
-void			debug_printfmt(t_fmt *fmt);
+void			debug_printfmt(t_fmt fmt);
 t_fmt			find_conversion(const char **format, t_fmt fmt);
 t_fmt			find_length(const char **format, t_fmt fmt);
 t_fmt			find_precision(const char **format, t_fmt fmt, va_list ap);
 t_fmt			find_width(const char **format, t_fmt fmt, va_list ap);
 t_fmt			find_options(const char **format, t_fmt fmt);
 t_fmt			*new_fmt(void);
-int				find_case(char c);
-int				find_base(char c);
+int				find_case(t_fmt fmt);
+int				find_base(t_fmt fmt);
 int				is_length(char c);
 int				is_conversion(char c);
 int				is_flag(char c);
@@ -62,11 +62,11 @@ void			ft_putlong_base(long long n, int base, int up);;
 int				ft_longlen(long long n, int base);
 int				print_long(t_fmt fmt, long long num);
 int				print_prehex(int hash, char c);
-int				is_unsigned(char c);
+int				is_unsigned(t_fmt fmt);
 void			ft_putulong_base(unsigned long long n, int base, int up);
-void			ft_putunbr_base(unsigned int n, int base, int up);
+void			ft_putunbr_base(unsigned long long n, int base, int up);
 int				ft_ulonglen(unsigned long long n, int base);
-int				ft_uintlen(unsigned int n, int base);
+int				ft_uintlen(unsigned long long n, int base);
 int				print_uint(t_fmt fmt, unsigned int num);
 int				print_ulong(t_fmt fmt, unsigned long long num);
 int				is_short(int l);
@@ -92,12 +92,18 @@ void			ft_putnwstr(wchar_t const *s, size_t len);
 size_t			ft_wstrlen(const wchar_t *s, int prec);
 int				print_wcharp(t_fmt fmt, wchar_t *str);
 int				is_ushort(t_fmt fmt);
-int				print_ushort(t_fmt fmt, short num);
-void			ft_putushort_base(unsigned short n, int base, int up);
+int				print_ushort(t_fmt fmt, unsigned long long num);
+void			ft_putushort_base(unsigned long long n, int base, int up);
 int				is_uchar(t_fmt fmt);
-int				ft_ucharlen(unsigned char n, int base);
-void			ft_putuchar_base(unsigned char n, int base, int up);
+int				ft_ucharlen(unsigned long long n, int base);
+void			ft_putuchar_base(unsigned long long n, int base, int up);
 int				print_uchar(t_fmt fmt, unsigned char num);
 int				ft_abs(int n);
-
+int				is_uint(t_fmt fmt);
+int				is_ulong(t_fmt fmt);
+int				is_octal(t_fmt fmt);
+int			print_unsigned(t_fmt fmt, unsigned long long num,
+int (*ulen)(unsigned long long, int),
+void (*putu)(unsigned long long, int, int));
+int		(*get_ulenfunc(t_fmt fmt))(unsigned long long, int);
 #endif

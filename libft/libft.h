@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/09 11:10:09 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/20 15:14:27 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 11:31:03 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_intlen(int n, int base);
 void			ft_putushort(unsigned int c);
-int				ft_ushortlen(unsigned short n, int base);
+int				ft_ushortlen(unsigned long long n, int base);
 size_t			ft_charsize(unsigned int c);
 
 #endif

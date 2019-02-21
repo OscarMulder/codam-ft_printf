@@ -6,11 +6,37 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 13:52:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/20 14:14:15 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 12:12:05 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	(*get_uputfunc(t_fmt fmt))(unsigned long long, int, int)
+{
+	if (is_uchar(fmt))
+		return (&ft_putuchar_base);
+	if (is_ushort(fmt))
+		return (&ft_putushort_base);
+	if (is_uint(fmt))
+		return (&ft_putunbr_base);
+	if (is_ulong(fmt))
+		return (&ft_putulong_base);
+	return (&ft_putulong_base);
+}
+
+int		(*get_ulenfunc(t_fmt fmt))(unsigned long long, int)
+{
+	if (is_uchar(fmt))
+		return (&ft_ucharlen);
+	if (is_ushort(fmt))
+		return (&ft_ushortlen);
+	if (is_uint(fmt))
+		return (&ft_uintlen);
+	if (is_ulong(fmt))
+		return (&ft_ulonglen);
+	return (&ft_ulonglen);
+}
 
 int		print_var(t_fmt fmt, va_list ap)
 {
@@ -18,14 +44,8 @@ int		print_var(t_fmt fmt, va_list ap)
 		return (0);
 	if (fmt.conv == '%')
 		return (print_char(fmt, '%'));
-	if (is_ushort(fmt))
-		return (print_ushort(fmt, va_arg(ap, unsigned int)));
-	if (is_uchar(fmt))
-		return (print_uchar(fmt, va_arg(ap, unsigned int)));
-	if (is_unsigned(fmt.conv) && is_long(fmt.conv, fmt.length))
-		return (print_ulong(fmt, va_arg(ap, unsigned long long)));
-	if (is_unsigned(fmt.conv) && is_int(fmt.conv))
-		return (print_uint(fmt, va_arg(ap, unsigned int)));
+	if (is_unsigned(fmt))
+		return (print_unsigned(fmt, va_arg(ap, unsigned long long), get_ulenfunc(fmt), get_uputfunc(fmt)));	
 	if (is_long(fmt.conv, fmt.length))
 		return (print_long(fmt, va_arg(ap, long long)));
 	if (is_int(fmt.conv) && !is_short(fmt.length) &&

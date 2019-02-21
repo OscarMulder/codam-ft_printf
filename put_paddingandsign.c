@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 16:07:28 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/20 13:48:21 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 12:45:35 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ void		put_paddingandsign(t_fmt fmt, long long num, int ilen)
 		else
 			print_padding(' ', (fmt.width - ilen));
 	}
-	if (num >= 0 && fmt.opt[3] && !fmt.opt[4] && find_base(fmt.conv) == 10)
+	if (num >= 0 && fmt.opt[3] && !fmt.opt[4] && find_base(fmt) == 10)
 		ft_putchar(' ');
 	if (num == 0 && fmt.prec == 0 && fmt.width != -1)
 		ft_putchar(' ');
-	if (num >= 0 && fmt.opt[4] && find_base(fmt.conv) == 10)
+	if (num >= 0 && fmt.opt[4] && find_base(fmt) == 10)
 		ft_putchar('+');
-	if (num < 0 && find_base(fmt.conv) == 10)
+	if (num < 0 && find_base(fmt) == 10)
 		ft_putchar('-');
 	if (!fmt.opt[2] && fmt.opt[1] && fmt.prec == -1)
 	{

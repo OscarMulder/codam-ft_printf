@@ -6,21 +6,23 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/20 13:30:58 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/20 13:31:14 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 12:05:13 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_ucharlen(unsigned char n, int base)
+int		ft_ucharlen(unsigned long long n, int base)
 {
-	int	len;
+	int				len;
+	unsigned char	num;
 
+	num = (unsigned char)n;
 	len = 1;
-	if (n != 0)
+	if (num != 0)
 		len--;
-	while (n != 0)
+	while (num != 0)
 	{
 		len++;
-		n /= base;
+		num /= base;
 	}
 	return (len);
 }

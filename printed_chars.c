@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 15:58:28 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/20 15:19:04 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 12:45:35 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int		printed_chars(t_fmt fmt, long long num)
 {
 	int	ilen;
 
-	ilen = ft_longlen(num, find_base(fmt.conv));
+	ilen = ft_longlen(num, find_base(fmt));
 	if (is_hex(fmt.conv, fmt.length) && num < 0 &&
 	!is_long(fmt.conv, fmt.length))
-		ilen = ft_intlen(num, find_base(fmt.conv));
-	if (find_base(fmt.conv) == 10 && num < 0)
+		ilen = ft_intlen(num, find_base(fmt));
+	if (find_base(fmt) == 10 && num < 0)
 		ilen++;
 	if (fmt.prec == 0 && num == 0)
 		ilen = 0;
@@ -37,13 +37,13 @@ int		printed_chars(t_fmt fmt, long long num)
 				ilen += 2;
 		}
 		else if (fmt.prec >= fmt.width && num < 0 &&
-		find_base(fmt.conv) == 10)
+		find_base(fmt) == 10)
 			ilen = fmt.prec + 1;
 		else
 			ilen = fmt.width;
 	}
-	if (fmt.width <= ft_longlen(num, find_base(fmt.conv)) &&
-	num >= 0 && (fmt.opt[3] || fmt.opt[4]) && find_base(fmt.conv) == 10)
+	if (fmt.width <= ft_longlen(num, find_base(fmt)) &&
+	num >= 0 && (fmt.opt[3] || fmt.opt[4]) && find_base(fmt) == 10)
 		ilen++;
 	return (ilen);
 }

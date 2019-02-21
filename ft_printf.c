@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/01 16:36:22 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/20 20:27:26 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/21 11:09:34 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int		ft_printf(const char *format, ...)
 			format++;
 			fmt = reset_fmt(fmt);
 			fmt = check_format(fmt, &format, ap);
-			//debug_printfmt(fmt);
 			len += print_var(fmt, ap);
+			// debug_printfmt(fmt);
 		}
 		else
 		{

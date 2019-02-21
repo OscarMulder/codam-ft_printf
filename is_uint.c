@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_unsigned.c                                      :+:    :+:            */
+/*   is_uint.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/11 13:43:34 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 12:39:38 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/21 12:15:00 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/21 12:34:16 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_unsigned(t_fmt fmt)
+int		is_uint(t_fmt fmt)
 {
-	char c;
+	char	c;
+	int 	l;
 
 	c = fmt.conv;
-	if (c == 'u' || c == 'U')
-		return (1);
-	if (c == 'o' || c == 'O')
-		return (1);
-	if (c == 'x' || c == 'X')
-		return (1);
+	l = fmt.length;
+	if (c == 'o' || c == 'u' || c == 'x' || c == 'X')
+	{
+		if (l == -1)
+			return (1);
+		return (0);
+	}
 	return (0);
 }

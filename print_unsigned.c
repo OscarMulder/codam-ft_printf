@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   print_charsign.c                                   :+:    :+:            */
+/*   print_unsigned.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/11 18:46:23 by omulder        #+#    #+#                */
+/*   Created: 2019/02/21 11:17:53 by omulder        #+#    #+#                */
 /*   Updated: 2019/02/21 12:45:35 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			print_charsign(t_fmt fmt, signed char num)
+int			print_unsigned(t_fmt fmt, unsigned long long num,
+int (*ulen)(unsigned long long, int),
+void (*putu)(unsigned long long, int, int))
 {
 	int ilen;
 
-	ilen = ft_longlen(num, find_base(fmt));
+	ilen = ulen(num, find_base(fmt));
+	if (fmt.opt[0] && is_octal(fmt) && fmt.prec < (ilen + 1))
+	{
+		if (num == 0)
+			ilen--;
+		fmt.prec = ilen + 1;
+	}
 	if (fmt.prec > ilen)
 		ilen = fmt.prec;
-	if (find_base(fmt) == 10 &&
-	(num < 0 || (num >= 0 && fmt.opt[3]) || (num >= 0 && fmt.opt[4])))
-		ilen++;
-	put_paddingandsign(fmt, num, ilen);
+	put_upaddingandsign(fmt, num, ilen);
 	if (fmt.prec != -1)
-		print_padding('0', (fmt.prec - ft_longlen(num, find_base(fmt))));
+		print_padding('0', (fmt.prec - ulen(num, find_base(fmt))));
 	if (fmt.opt[2])
 		print_prehex(fmt.opt[0], fmt.conv);
-	if (fmt.prec != 0)
-	{
-		if (find_base(fmt) == 8)
-			ft_putchar('0');
-		ft_putcharsign(num);
-	}
+	if (!(fmt.prec == 0 && num == 0))
+		putu(num, find_base(fmt), find_case(fmt));
 	put_backpadding(fmt, num, ilen);
-	return (printed_chars(fmt, num));
+	return (printed_uchars(fmt, num));
 }

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 12:04:30 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 12:53:37 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/25 14:59:32 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_fmt	find_width(const char **format, t_fmt fmt, va_list ap)
 {
 	while (is_flag(**format))
 		(*format)++;
-	if (ft_isdigit(**format) || **format == '*')
+	if ((ft_isdigit(**format) && **format != '0') || **format == '*')
 	{
 		if (ft_isdigit(**format))
 			fmt.width = ft_atoi(*format);
@@ -33,7 +33,7 @@ t_fmt	find_width(const char **format, t_fmt fmt, va_list ap)
 		}
 		while (**format == '*')
 			(*format)++;
-		if (ft_isdigit(**format))
+		if (ft_isdigit(**format) && **format != '0')
 			fmt.width = ft_atoi(*format);
 		while (ft_isdigit(**format))
 			(*format)++;

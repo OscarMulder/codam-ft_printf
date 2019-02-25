@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 17:02:07 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/25 19:08:51 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <libft.h>
-# define HASH opt[0]
-# define ZERO opt[1]
-# define MIN opt[2]
-# define SPACE opt[3]
-# define PLUS opt[4]
-# define APST opt[5]
+# define HASH	opt[0]
+# define ZERO	opt[1]
+# define MIN	opt[2]
+# define SPACE	opt[3]
+# define PLUS	opt[4]
+# define APST	opt[5]
 
 typedef struct	s_fmt
 {
@@ -112,6 +112,5 @@ void			ft_putushort_base(unsigned long long n, int base, int up);
 void			ft_putwstr(wchar_t const *s);
 void			put_backpadding(t_fmt fmt, long long num, int ilen);
 void			put_paddingandsign(t_fmt fmt, long long num, int ilen);
-void			put_upaddingandsign(t_fmt fmt, unsigned long long num, int ilen);
-
+void			put_upaddingandsign(t_fmt fmt, unsigned long long num, int ilen, int op);
 #endif

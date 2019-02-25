@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/21 11:17:53 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 17:19:29 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/25 19:07:25 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ static unsigned long long	typecast(t_fmt fmt, unsigned long long num)
 int			print_unsigned(t_fmt fmt, unsigned long long num)
 {
 	int ilen;
+	int oldprec;
 
 	num = (typecast(fmt, num));
 	ilen = ft_ulonglen(num, find_base(fmt));
+	oldprec = fmt.prec;
 	if (is_voidp(fmt))
 		fmt.HASH = 1;
 	if (fmt.HASH && is_octal(fmt) && fmt.prec < (ilen + 1))
@@ -43,7 +45,7 @@ int			print_unsigned(t_fmt fmt, unsigned long long num)
 	}
 	if (fmt.prec > ilen)
 		ilen = fmt.prec;
-	put_upaddingandsign(fmt, num, ilen);
+	put_upaddingandsign(fmt, num, ilen, oldprec);
 	if (!fmt.MIN && fmt.prec != -1)
 		print_padding('0', (fmt.prec - ft_ulonglen(num, find_base(fmt))));
 	if (fmt.MIN && (num != 0 || is_voidp(fmt)))

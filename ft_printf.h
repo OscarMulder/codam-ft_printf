@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/25 19:08:51 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/27 10:50:43 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,4 +113,6 @@ void			ft_putwstr(wchar_t const *s);
 void			put_backpadding(t_fmt fmt, long long num, int ilen);
 void			put_paddingandsign(t_fmt fmt, long long num, int ilen);
 void			put_upaddingandsign(t_fmt fmt, unsigned long long num, int ilen, int op);
+t_fmt			copy_fmt(t_fmt fmt);
+
 #endif

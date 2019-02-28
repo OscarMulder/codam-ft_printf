@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putshort.c                                      :+:    :+:            */
+/*   is_negzero.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/11 20:03:36 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 14:03:21 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/28 15:23:17 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/28 15:23:18 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putshort(long long c)
+int			is_negzero(double num)
 {
-	short cs;
-
-	cs = (short)c;
-	if (cs < 0)
-	{
-		if (cs < -9)
-			ft_putshort((cs / 10) * -1);
-		ft_putchar(-(cs % 10) + '0');
-	}
-	else
-	{
-		if (cs > 9)
-			ft_putshort(cs / 10);
-		ft_putchar((cs % 10) + '0');
-	}
+	if (num == 0 && 1 / num == (-1.0 / 0.0))
+		return (1);
+	return (0);
 }

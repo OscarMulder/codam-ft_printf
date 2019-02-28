@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_uintlen.c                                       :+:    :+:            */
+/*   prepare_fmt_num.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/14 19:21:44 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 12:03:02 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/28 15:23:53 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/28 15:23:55 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_uintlen(unsigned long long n, int base)
-{
-	int				len;
-	unsigned int	num;
+#include "ft_printf.h"
 
-	num = (unsigned int)n;
-	len = 1;
-	if (num != 0)
-		len--;
-	while (num != 0)
+t_fmt				prepare_fmt_num(t_fmt fmt, t_fmt copy, int neg)
+{
+	if (copy.prec != 0 && copy.prec != -1)
+		fmt.width = (fmt.width - fmt.prec - 1);
+	fmt.prec = -1;
+	fmt.conv = 'D';
+	if (fmt.MIN)
 	{
-		len++;
-		num /= base;
+		fmt.MIN = 0;
+		fmt.width = 0;
 	}
-	return (len);
+	if (fmt.width > 1)
+		fmt.width--;
+	if (neg)
+		fmt.PLUS = -1;
+	return (fmt);
 }

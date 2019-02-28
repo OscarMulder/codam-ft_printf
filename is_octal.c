@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/21 12:42:28 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 12:43:07 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/28 14:56:33 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int		is_octal(t_fmt fmt)
 
 	c = fmt.conv;
 	if (c == 'o' || c == 'O')
-			return (1);
+		return (1);
 	return (0);
 }

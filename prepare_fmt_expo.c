@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putnnbr.c                                       :+:    :+:            */
+/*   prepare_fmt_expo.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/07 14:16:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/07 14:23:38 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/28 15:24:34 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/28 15:25:13 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putnnbr(int n, int len)
+t_fmt	prepare_fmt_exp(t_fmt fmt, t_fmt copy, int ret)
 {
-	if (len > 0 && n < 0)
-	{
-		ft_putchar('-');
-		if (n < -9)
-			ft_putnnbr((n / 10) * -1, len - 2);
-		ft_putchar(-(n % 10) + '0');
-	}
-	else if (len > 0)
-	{
-		if (n > 9)
-			ft_putnnbr(n / 10, len - 1);
-		ft_putchar((n % 10) + '0');
-	}
+	fmt.width = -1;
+	fmt.SPACE = 0;
+	fmt.MIN = copy.MIN;
+	if (fmt.MIN)
+		fmt.width = copy.width - ret;
+	fmt.PLUS = 0;
+	fmt.prec = copy.prec;
+	fmt.HASH = 0;
+	return (fmt);
 }

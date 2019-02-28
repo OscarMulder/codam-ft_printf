@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/21 11:17:53 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/25 19:07:25 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/28 15:03:52 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,20 @@ static unsigned long long	typecast(t_fmt fmt, unsigned long long num)
 	return ((unsigned long long)num);
 }
 
-int			print_unsigned(t_fmt fmt, unsigned long long num)
+static t_fmt				set_prec(t_fmt fmt, unsigned long long n, int ilen)
+{
+	if (is_voidp(fmt))
+		fmt.HASH = 1;
+	if (fmt.HASH && is_octal(fmt) && fmt.prec < (ilen + 1))
+	{
+		if (n == 0)
+			ilen--;
+		fmt.prec = ilen + 1;
+	}
+	return (fmt);
+}
+
+int							print_unsigned(t_fmt fmt, unsigned long long num)
 {
 	int ilen;
 	int oldprec;
@@ -35,14 +48,7 @@ int			print_unsigned(t_fmt fmt, unsigned long long num)
 	num = (typecast(fmt, num));
 	ilen = ft_ulonglen(num, find_base(fmt));
 	oldprec = fmt.prec;
-	if (is_voidp(fmt))
-		fmt.HASH = 1;
-	if (fmt.HASH && is_octal(fmt) && fmt.prec < (ilen + 1))
-	{
-		if (num == 0)
-			ilen--;
-		fmt.prec = ilen + 1;
-	}
+	fmt = set_prec(fmt, num, ilen);
 	if (fmt.prec > ilen)
 		ilen = fmt.prec;
 	put_upaddingandsign(fmt, num, ilen, oldprec);

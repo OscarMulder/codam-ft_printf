@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 12:05:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/25 15:05:40 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/28 14:56:09 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static t_fmt	set_option(char c, t_fmt fmt)
 	return (fmt);
 }
 
-t_fmt		find_options(const char **format, t_fmt fmt)
+t_fmt			find_options(const char **format, t_fmt fmt)
 {
 	const char *tmp;
 

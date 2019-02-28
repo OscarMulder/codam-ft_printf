@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 16:06:31 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/25 19:09:16 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/28 15:00:34 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ void	put_upaddingandsign(t_fmt fmt, unsigned long long num, int ilen, int op)
 			print_padding('0', (fmt.width - ilen));
 	}
 	else if (!fmt.MIN && fmt.ZERO && fmt.HASH && fmt.conv == 'o' && op == -1)
-	 	print_padding('0', (fmt.width - ilen));
+		print_padding('0', (fmt.width - ilen));
 }

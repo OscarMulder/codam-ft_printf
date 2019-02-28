@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   print_pointer.c                                    :+:    :+:            */
+/*   ft_putchar.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/19 14:11:25 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 12:51:34 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/20 15:14:38 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/28 14:58:28 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		print_pointer(t_fmt fmt, unsigned long long num)
+int		ft_putchar(int c)
 {
-	int ret;
+	char ca;
 
-	ret = 0;
-	fmt.HASH = 1;
-	return (ret + print_ulong(fmt, num));
+	ca = (char)c;
+	write(1, &ca, 1);
+	return (1);
 }

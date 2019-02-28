@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_floor.c                                         :+:    :+:            */
+/*   is_ldouble.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/14 15:35:11 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/14 15:40:41 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/28 15:18:36 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/28 15:18:44 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-double	ft_floor(double x)
+int		is_ldouble(t_fmt fmt)
 {
-	if (x > 0)
-		return ((int)x);
-	if (x < 0)
-		return ((int)x - 1);
+	char	c;
+	int		l;
+
+	c = fmt.conv;
+	l = fmt.length;
+	if (l == ('l' + 'l'))
+	{
+		if (c == 'e' || c == 'E')
+			return (1);
+		if (c == 'f' || c == 'F')
+			return (1);
+		if (c == 'g' || c == 'G')
+			return (1);
+		if (c == 'a' || c == 'A')
+			return (1);
+	}
 	return (0);
 }

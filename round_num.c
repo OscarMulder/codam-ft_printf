@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putushort_base.c                                :+:    :+:            */
+/*   round_num.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/20 12:55:10 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 11:30:12 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/28 15:21:59 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/28 15:22:01 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putushort_base(unsigned long long n, int base, int up)
+long long	round_num(long long num, double expo)
 {
-	const char		upc[] = "0123456789ABCDEF";
-	const char		low[] = "0123456789abcdef";
-	const char		*ptr;
-	unsigned short	num;
+	long long cpy;
 
-	num = (unsigned short)n;
-	if (up)
-		ptr = upc;
-	else
-		ptr = low;
-	if (num > (unsigned short)(base - 1))
-		ft_putushort_base(num / base, base, up);
-	ft_putchar(ptr[(num % base)]);
+	cpy = expo * ft_powl(10, 2);
+	if (cpy < 0)
+		cpy = -cpy;
+	if (cpy % 100 > 50)
+	{
+		if (num > 0)
+			return (num + 1);
+		else
+			return (num - 1);
+	}
+	return (num);
 }

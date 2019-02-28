@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_ushortlen.c                                     :+:    :+:            */
+/*   ft_isupper.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/20 12:59:47 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 11:29:25 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/28 15:13:56 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/28 15:39:57 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_ushortlen(unsigned long long n, int base)
-{
-	int	len;
-	unsigned short num;
+#include "ft_printf.h"
 
-	num = (unsigned short)n;
-	len = 1;
-	if (num != 0)
-		len--;
-	while (num != 0)
-	{
-		len++;
-		num /= base;
-	}
-	return (len);
+int		ft_isupper(char c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	return (0);
 }

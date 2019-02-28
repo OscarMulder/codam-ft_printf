@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   find_escape.c                                      :+:    :+:            */
+/*   round_expo.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/08 13:23:49 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/08 13:24:03 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/28 15:21:12 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/28 15:21:18 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	find_escape(const char **format, t_fmt *fmt)
+long long	round_expo(double expo, int prec)
 {
-	if (**format == '%')
-		fmt->conv = '%';
+	long long cpy;
+
+	cpy = expo * ft_powl(10, prec + 1);
+	if (cpy < 0)
+		cpy = -cpy;
+	if (cpy % 10 >= 5)
+	{
+		return (ft_abs((cpy / 10) + 1));
+	}
+	return (ft_abs(cpy / 10));
 }

@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_rputstr.c                                       :+:    :+:            */
+/*   print_dot.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/09 12:05:27 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/07 11:29:21 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/28 15:25:00 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/28 15:25:09 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_rputstr(char const *s)
+int		print_dot(t_fmt copy)
 {
-	int i;
-
-	i = 0;
-	if (s == NULL)
-		return (0);
-	while (s[i] != '\0')
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	return (i);
+	if (copy.prec != 0 || copy.HASH)
+		return (ft_putchar('.'));
+	return (0);
 }

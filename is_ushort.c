@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/20 12:56:45 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 12:37:18 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/28 14:58:08 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		is_ushort(t_fmt fmt)
 {
-	int 	l;
+	int		l;
 	char	c;
 
 	c = fmt.conv;

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_ucharlen.c                                      :+:    :+:            */
+/*   ft_pow.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/20 13:30:58 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 12:05:13 by omulder       ########   odam.nl         */
+/*   Created: 2019/02/14 15:29:06 by omulder        #+#    #+#                */
+/*   Updated: 2019/02/28 13:31:44 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_ucharlen(unsigned long long n, int base)
-{
-	int				len;
-	unsigned char	num;
+#include "ft_printf.h"
 
-	num = (unsigned char)n;
-	len = 1;
-	if (num != 0)
-		len--;
-	while (num != 0)
+long double	ft_powl(long double x, long double y)
+{
+	int i;
+	int f;
+
+	i = 1;
+	f = x;
+	while (i < y)
 	{
-		len++;
-		num /= base;
+		x *= f;
+		i++;
 	}
-	return (len);
+	return (x);
 }

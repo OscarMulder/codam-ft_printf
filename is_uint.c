@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/21 12:15:00 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 12:34:16 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/28 14:57:14 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		is_uint(t_fmt fmt)
 {
 	char	c;
-	int 	l;
+	int		l;
 
 	c = fmt.conv;
 	l = fmt.length;

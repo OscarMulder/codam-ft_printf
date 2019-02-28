@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/21 12:16:24 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 12:35:29 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/28 14:57:23 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		is_ulong(t_fmt fmt)
 {
 	char	c;
-	int 	l;
+	int		l;
 
 	c = fmt.conv;
 	l = fmt.length;

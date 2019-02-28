@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/10 20:09:51 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/21 14:35:45 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/28 14:56:20 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int			is_long(t_fmt fmt)
 {
-	char c;
-	int l;
+	char	c;
+	int		l;
 
 	c = fmt.conv;
 	l = fmt.length;

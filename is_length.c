@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 12:06:05 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/10 10:25:37 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/28 15:57:28 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		is_length(char c)
 {
-	if (c == 'h' || c == 'l' || c == 'j')
+	if (c == 'h' || c == 'l' || c == 'j' || c == 'L')
 		return (1);
 	if (c == 'j' || c == 't' || c == 'z')
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/28 15:45:40 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/28 15:53:23 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int				print_wcharp(t_fmt fmt, wchar_t *str);
 int				print_wcharp(t_fmt fmt, wchar_t *str);
 int				printed_chars(t_fmt fmt, long long num);
 int				printed_uchars(t_fmt fmt, unsigned long long num);
+int				print_ldouble(t_fmt fmt, long double num);
 long double		ft_powl(long double x, long double y);
 long long		ft_abs(long long n);
 long long		round_expo(double expo, int prec);

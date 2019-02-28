@@ -6,7 +6,7 @@
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/05 07:59:03 by omulder        #+#    #+#                 #
-#    Updated: 2019/02/28 15:37:38 by omulder       ########   odam.nl          #
+#    Updated: 2019/02/28 15:53:21 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ print_padding.c print_prehex.c print_signed.c print_unsigned.c print_var.c \
 print_wcharp.c printed_chars.c printed_uchars.c put_backpadding.c \
 put_paddingandsign.c put_upaddingandsign.c reset_fmt.c is_ldouble.c \
 round_expo.c round_num.c check_special.c is_negzero.c prepare_fmt_num.c \
-prepare_fmt_expo.c print_dot.c
+prepare_fmt_expo.c print_dot.c print_ldouble.c
 OBJECTS = $(SRCS:.c=.o) $(LIBFT:.c=.o)
 
 all: $(OBJECTS) $(NAME)

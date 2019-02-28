@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 13:50:43 by omulder        #+#    #+#                */
-/*   Updated: 2019/02/28 15:18:15 by omulder       ########   odam.nl         */
+/*   Updated: 2019/02/28 15:56:20 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		is_double(t_fmt fmt)
 
 	c = fmt.conv;
 	l = fmt.length;
-	if (l != ('l' + 'l'))
+	if (l != 'L')
 	{
 		if (c == 'e' || c == 'E')
 			return (1);

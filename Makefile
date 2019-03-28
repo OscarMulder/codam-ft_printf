@@ -6,7 +6,7 @@
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/05 07:59:03 by omulder        #+#    #+#                 #
-#    Updated: 2019/02/28 15:53:21 by omulder       ########   odam.nl          #
+#    Updated: 2019/03/28 11:55:53 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ NAME = libftprintf.a
 TEST = printf
 CC = gcc
 FLAGS = -Wall -Werror -Wextra
-INCLUDES = -I./ -I./libft/
-VPATH = ./libft/
+INCLUDES = -I./ -I./libft/ -I./includes
+VPATH = ./libft/ ./srcs
 LIBFT = ft_abs.c ft_atoi.c ft_isalpha.c ft_isdigit.c ft_isspace.c ft_longlen.c \
 ft_pow.c ft_putchar_uni.c ft_putchar.c ft_putcharsign.c ft_putlong_base.c \
 ft_putnstr.c ft_putnwstr.c ft_putstr.c ft_putulong_base.c ft_putwstr.c \
